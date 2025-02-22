@@ -28,8 +28,8 @@ document.querySelector('.hamburger')?.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Contact Form Handling
-document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+// Contact Form Handling for Formspree
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const name = document.getElementById('name').value.trim();
@@ -65,34 +65,9 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
     if (isValid) {
         feedback.textContent = 'Sending...';
         feedback.style.color = '#3498db';
-
-        try {
-            const response = await fetch('/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, message })
-            });
-            const result = await response.json();
-
-            if (response.ok) {
-                feedback.textContent = result.message;
-                feedback.style.color = '#27ae60';
-                this.reset();
-            } else {
-                throw new Error(result.message);
-            }
-        } catch (error) {
-            feedback.textContent = 'Error sending message. Try again later.';
-            feedback.style.color = '#e74c3c';
-            console.error(error);
-        }
-        if (isValid) {
-            feedback.textContent = 'Sending...';
-            feedback.style.color = '#3498db';
-            this.submit(); // Submit to Formspree
-        } else {
-            feedback.textContent = 'Please fix the errors above.';
-            feedback.style.color = '#e74c3c';
-        }
+        this.submit(); // Submit directly to Formspree
+    } else {
+        feedback.textContent = 'Please fix the errors above.';
+        feedback.style.color = '#e74c3c';
     }
 });
