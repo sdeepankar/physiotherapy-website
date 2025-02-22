@@ -45,6 +45,11 @@ header .container {
     align-items: center;
 }
 
+.logo a {
+    display: inline-block; /* Ensures the link wraps only the image */
+    line-height: 0; /* Removes extra spacing */
+}
+
 .logo-img {
     width: 35px; /* Slightly smaller for mobile */
     height: 35px;
