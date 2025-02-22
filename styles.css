@@ -15,14 +15,14 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px; /* Reduced for mobile */
 }
 
 /* Header */
 header {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
-    padding: 15px 0;
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -46,11 +46,10 @@ header .container {
 }
 
 .logo-img {
-    width: 40px;
-    height: 40px;
+    width: 35px; /* Slightly smaller for mobile */
+    height: 35px;
     border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
+    margin-right: 8px;
     transition: transform 0.3s ease;
 }
 
@@ -59,8 +58,20 @@ header .container {
 }
 
 header h1 {
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 24px; /* Smaller base size */
+}
+
+.hamburger {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    transition: max-height 0.3s ease;
 }
 
 nav ul {
@@ -69,7 +80,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 nav ul li a {
@@ -83,39 +94,22 @@ nav ul li a:hover {
     color: #1abc9c;
 }
 
-/* Responsive Design for Header */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .logo {
-        margin-bottom: 10px;
-    }
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-}
-
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #3498db, #1abc9c);
     color: white;
     text-align: center;
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
+    padding: 80px 0;
 }
 
 .hero h2 {
-    font-size: 48px;
+    font-size: 36px;
     margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 /* Button */
@@ -123,11 +117,12 @@ nav ul li a:hover {
     display: inline-block;
     background: #e74c3c;
     color: white;
-    padding: 12px 25px;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 25px;
     font-weight: 600;
     transition: transform 0.3s ease, background 0.3s ease;
+    touch-action: manipulation; /* Better touch response */
 }
 
 .btn:hover {
@@ -157,48 +152,48 @@ nav ul li a:hover {
 
 /* Welcome Section */
 .welcome {
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
     background: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .welcome h3 {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 15px;
 }
 
 /* Highlights Section */
 .highlights {
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
     background: #f4f4f4;
 }
 
 .highlights h3 {
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 28px;
+    margin-bottom: 30px;
     color: #2c3e50;
 }
 
 .highlight-grid {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
 .highlight-card {
     flex: 1;
-    min-width: 280px;
+    min-width: 250px;
     max-width: 33%;
-    padding: 30px;
+    padding: 25px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    height: 260px; /* Fixed height for equality */
+    height: 240px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -210,11 +205,11 @@ nav ul li a:hover {
 }
 
 .icon-placeholder {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: #3498db;
     border-radius: 50%;
-    margin: 0 auto 15px;
+    margin: 0 auto 10px;
     transition: background 0.3s ease;
 }
 
@@ -223,41 +218,29 @@ nav ul li a:hover {
 }
 
 .highlight-card h4 {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 8px;
     color: #2c3e50;
 }
 
 .highlight-card p {
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
-}
-
-/* Responsive Design for Highlights */
-@media (max-width: 768px) {
-    .highlight-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .highlight-card {
-        max-width: 100%;
-        margin: 10px 0;
-    }
 }
 
 /* Services Page */
 .services-intro {
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
     background: linear-gradient(135deg, #ecf0f1, #f9f9f9);
 }
 
 .services-list {
-    padding: 0 0 60px;
+    padding: 0 0 40px;
 }
 
 .accordion-item {
-    margin: 15px 0;
+    margin: 10px 0;
     background: white;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -265,11 +248,12 @@ nav ul li a:hover {
 }
 
 .accordion-item h3 {
-    padding: 20px;
+    padding: 15px;
     cursor: pointer;
     background: #3498db;
     color: white;
     transition: background 0.3s ease;
+    font-size: 18px;
 }
 
 .accordion-item h3:hover {
@@ -278,97 +262,87 @@ nav ul li a:hover {
 
 .accordion-content {
     max-height: 0;
-    padding: 0 20px;
+    padding: 0 15px;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .accordion-content.active {
-    max-height: 200px; /* Adjust based on content */
-    padding: 20px;
+    max-height: 200px;
+    padding: 15px;
 }
 
 /* CTA Section */
 .cta {
     text-align: center;
-    padding: 40px 0;
+    padding: 30px 0;
     background: #ecf0f1;
+}
+
+/* About Page */
+.about-intro {
+    padding: 40px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #ecf0f1, #f9f9f9);
+}
+
+.about-content {
+    padding: 40px 0;
+    background: white;
+}
+
+.about-text, .about-mission {
+    max-width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px;
+}
+
+.about-text h3, .about-mission h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+.about-mission .btn {
+    margin-top: 15px;
 }
 
 /* Contact Page */
 .contact-info {
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
     background: white;
 }
 
 .contact-info ul {
     list-style: none;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .contact-info ul li {
-    margin: 10px 0;
-    font-size: 18px;
+    margin: 8px 0;
+    font-size: 16px;
 }
 
 .contact-form {
-    padding: 0 0 60px;
+    padding: 0 0 40px;
     background: #f4f4f4;
 }
 
-form {
-    max-width: 700px;
-    margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    margin: 15px 0 5px;
-    font-weight: 500;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
-}
-
-form input:focus, form textarea:focus {
-    border-color: #3498db;
-    outline: none;
-}
-
-form textarea {
-    height: 150px;
-}
-
-.feedback {
-    margin-top: 15px;
-    font-size: 16px;
-    color: #27ae60;
-}
-
-/* Contact Form Enhancements */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     position: relative;
 }
 
 form input, form textarea {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-bottom: 5px;
     border: 2px solid #ddd;
     border-radius: 5px;
     transition: border-color 0.3s ease;
+    font-size: 14px;
 }
 
 form input:focus, form textarea:focus {
@@ -377,20 +351,20 @@ form input:focus, form textarea:focus {
 }
 
 form textarea {
-    height: 150px;
+    height: 120px;
     resize: vertical;
 }
 
 .error {
     color: #e74c3c;
-    font-size: 14px;
+    font-size: 12px;
     display: block;
-    min-height: 16px;
+    min-height: 14px;
 }
 
 .feedback {
-    margin-top: 20px;
-    font-size: 16px;
+    margin-top: 15px;
+    font-size: 14px;
     text-align: center;
     font-weight: 500;
 }
@@ -399,66 +373,116 @@ form textarea {
 footer {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
-    padding: 30px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
-/* Responsive Design */
+/* Smartphone View (max-width: 768px) */
 @media (max-width: 768px) {
-    nav ul {
-        float: none;
-        text-align: center;
+    /* Header */
+    header .container {
+        flex-wrap: wrap;
+    }
+    .hamburger {
+        display: block;
+    }
+    .nav-menu {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+    }
+    .nav-menu.active {
+        max-height: 200px; /* Adjust based on menu height */
     }
     nav ul li {
         display: block;
-        margin: 15px 0;
-    }
-    .highlight-card {
-        width: 100%;
         margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 50px 0;
     }
     .hero h2 {
-        font-size: 32px;
+        font-size: 24px;
     }
     .hero p {
+        font-size: 14px;
+    }
+
+    /* Welcome */
+    .welcome {
+        padding: 30px 0;
+    }
+    .welcome h3 {
+        font-size: 22px;
+    }
+
+    /* Highlights */
+    .highlights {
+        padding: 30px 0;
+    }
+    .highlights h3 {
+        font-size: 22px;
+    }
+    .highlight-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .highlight-card {
+        max-width: 90%;
+        margin: 10px 0;
+        height: auto; /* Flexible height on mobile */
+        padding: 20px;
+    }
+
+    /* Services */
+    .services-intro {
+        padding: 30px 0;
+    }
+    .services-list {
+        padding: 0 0 30px;
+    }
+    .accordion-item h3 {
         font-size: 16px;
     }
-}
+    .accordion-content {
+        font-size: 14px;
+    }
 
-
-/* About Page */
-.about-intro {
-    padding: 60px 0;
-    text-align: center;
-    background: linear-gradient(135deg, #ecf0f1, #f9f9f9);
-}
-
-.about-content {
-    padding: 60px 0;
-    background: white;
-}
-
-.about-text, .about-mission {
-    max-width: 50%;
-    display: inline-block;
-    vertical-align: top;
-    padding: 20px;
-}
-
-.about-text h3, .about-mission h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #3498db;
-}
-
-.about-mission .btn {
-    margin-top: 20px;
-}
-
-/* Responsive Design for About */
-@media (max-width: 768px) {
+    /* About */
+    .about-intro {
+        padding: 30px 0;
+    }
     .about-text, .about-mission {
         max-width: 100%;
         display: block;
+        padding: 10px;
+    }
+    .about-text h3, .about-mission h3 {
+        font-size: 20px;
+    }
+
+    /* Contact */
+    .contact-info {
+        padding: 30px 0;
+    }
+    .contact-info ul li {
+        font-size: 14px;
+    }
+    .contact-form {
+        padding: 0 0 30px;
+    }
+    form {
+        padding: 20px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px 0;
+    }
+    footer p {
+        font-size: 12px;
     }
 }
