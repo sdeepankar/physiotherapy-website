@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - [Clinic Name] Physiotherapy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <h1>[Clinic Name]</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Info -->
+    <section id="contact" class="contact-info">
+        <div class="container">
+            <h2 class="fade-in">Get in Touch Today</h2>
+            <p class="fade-in">Have questions or ready to book? Reach out below.</p>
+            <ul>
+                <li>Phone: [Number]</li>
+                <li>Email: [Email]</li>
+                <li>Address: [Street, City, ZIP]</li>
+                <li>Hours: Mon-Fri: 9 AM - 6 PM | Sat: 10 AM - 2 PM | Sun: Closed</li>
+            </ul>
+        </div>
+    </section>
+
+<!-- Contact Form -->
+<section class="contact-form">
+    <div class="container">
+        <form id="contactForm" action="https://formspree.io/f/mjkgzonq" method="POST" novalidate>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+                <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="How can I assist you?"></textarea>
+                <span class="error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn pulse">Send Message</button>
+        </form>
+        <p id="formFeedback" class="feedback"></p>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>[Clinic Name] | Phone: [Number] | Email: [Email] | [Address]</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
