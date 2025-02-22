@@ -86,8 +86,13 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
             feedback.style.color = '#e74c3c';
             console.error(error);
         }
-    } else {
+        if (isValid) {
+            feedback.textContent = 'Sending...';
+            feedback.style.color = '#3498db';
+            this.submit(); // Submit to Formspree
+        } else {
         feedback.textContent = 'Please fix the errors above.';
         feedback.style.color = '#e74c3c';
+        }
     }
 });
